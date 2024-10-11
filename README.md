@@ -1,86 +1,94 @@
-### テーマ: 株価予測モデルの構築
+# Stock Price Prediction Model
+# 株価予測モデル
 
-#### 課題概要
+## English
 
-この研修では、NTTの株価データを用いて時系列データの予測モデルを構築します。データの探索的データ分析（EDA）から始め、最終的にはモデルの精度評価までを行います。機械学習を用いて株価予測を行い、その精度を検証することで、実務での応用を目指します。
+### Description
+This project implements a stock price prediction model using LSTM neural networks. It includes data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and backtesting. The model is designed to predict the closing price of NTT stock based on historical data.
 
-#### 作業目安
+### Features
+- Data preprocessing and feature engineering
+- Exploratory Data Analysis (EDA) with visualizations
+- LSTM model implementation using PyTorch
+- Hyperparameter tuning
+- Ensemble modeling
+- Backtesting
+- Cross-validation
 
-- **期間**: 1週間
-- **作業時間**: 12時間 ~ 20時間
-- **タイムライン(想定)**:
-  - **2時間**: データの理解とEDA
-  - **2時間**: データ前処理と特徴量エンジニアリング
-  - **1時間**: モデルの選定とトレーニング
-  - **1時間**: モデルの評価と結果の分析
-  - **4~8時間**: 改善策の検討とモデルの再トレーニング
-  - **2~6時間**: 結果のまとめとプレゼンテーション資料作成
+### Requirements
+- Python 3.7+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- torch
+- japanize-matplotlib
 
-#### 課題内容
+### How to Run
+1. Ensure you have all the required libraries installed. You can install them using pip:
+   ```
+   pip install pandas numpy matplotlib seaborn scikit-learn torch japanize-matplotlib
+   ```
 
-1. **データの理解とEDA**
-   - **概要**: NTTの株価データを使用して、基本統計量の確認、時系列のトレンドや季節性の検出、異常値の確認などを行います。
-   - **目標**: データの傾向を把握し、予測モデルに向けた課題を抽出する。
+2. Place your `stock_price.csv` file in the same directory as the script.
 
-2. **データ前処理と特徴量エンジニアリング**
-   - **概要**: 欠損値処理や正規化、スケーリングなどの前処理を行い、株価予測に有用な特徴量を作成します。
-   - **目標**: モデルの精度を向上させるためのデータを整備する。
+3. Run the script using Python:
+   ```
+   python stock_price_prediction_model.py
+   ```
 
-3. **モデル選定とトレーニング**
-   - **概要**: 適切な予測モデルを選定し、実装します。例として、ARIMAモデル、LSTMなどのリカレントニューラルネットワークが考えられます。
-   - **目標**: 株価の予測精度を最大化できるモデルを構築する。
-   - **備考**: 構築するモデルに指定はありませんが、なぜそのモデルを選択したのか、その理由を説明できるようにはしてください。
+4. The script will automatically load the data, perform EDA, train the models, and display the results.
 
-4. **モデルの評価と結果の分析**
-   - **概要**: モデルの予測精度を検証し、評価指標を計算します。
-   - **目標**: モデルの有効性を客観的に評価し、結果を分析する。
-   - **備考**: 評価指標はご自身で選定してください。ただし、選定理由は説明できるようにはしてください。
+### Output
+The script will generate various plots and metrics, including:
+- Stock price trends
+- Feature importance analysis
+- Model performance evaluation (MSE, MAE, R^2)
+- Backtesting results
 
-5. **改善策の検討とモデルの再トレーニング**
-   - **概要**: モデルの改善点を見つけ、それを反映させた再トレーニングを行います。
-   - **目標**: より精度の高い予測モデルを構築する。
-   - **備考**: どのような仮説を持って検証を行い結果としてどうだったかをプレゼンテーション資料にまとめてください
+## 日本語
 
-6. **結果のまとめとプレゼンテーション資料作成**
-   - **概要**: 研修での成果を資料としてまとめ、モデル構築のプロセスと結果をプレゼンテーション形式で報告します。
-   - **目標**: 技術的な成果をわかりやすく伝えるスキルを養う。
+### 説明
+このプロジェクトは、LSTMニューラルネットワークを使用した株価予測モデルを実装しています。データの前処理、探索的データ分析（EDA）、特徴量エンジニアリング、モデルのトレーニング、評価、バックテストが含まれています。このモデルは、過去のデータに基づいてNTT株の終値を予測するように設計されています。
 
-#### 提出物
+### 機能
+- データの前処理と特徴量エンジニアリング
+- 可視化を含む探索的データ分析（EDA）
+- PyTorchを使用したLSTMモデルの実装
+- ハイパーパラメータチューニング
+- アンサンブルモデリング
+- バックテスト
+- クロスバリデーション
 
-1. **実装したプログラム**:
-   - **提出方法**: 自身のGitHubアカウントにてリポジトリを作成し、コードをプッシュします。
-   - **README**: 実行方法を記載し、プログラムの概要を説明します。
+### 要件
+- Python 3.7+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- torch
+- japanize-matplotlib
 
-2. **プレゼンテーション用スライド**:
-   - **構成例**:
-     - **背景**: 株価予測の重要性や課題
-     - **データの分析結果**: EDAの結果と課題の抽出
-     - **技術概要**: 使用したモデルと特徴量エンジニアリングの手法(なぜそのモデルや特徴量を選んだのかを説明)
-     - **評価指標**: モデル評価に使用した指標とその結果
-     - **検証内容**: 改善策の背景にある仮説とその結果を一覧で示す
-     - **検証結果1**: 仮説1の検証結果と考察
-     - **検証結果2**: 仮説2の検証結果と考察
-     - **まとめ**: 結果のまとめと今後の展望
+### 実行方法
+1. 必要なライブラリがすべてインストールされていることを確認してください。pipを使用してインストールできます：
+   ```
+   pip install pandas numpy matplotlib seaborn scikit-learn torch japanize-matplotlib
+   ```
 
-3. **評価項目**
-   - **技術力観点**:
-     - データの理解と前処理が適切に行われているか
-     - 選択したモデルに適切な理由があるか
-     - 適切な評価指標の設計ができているか
-     - EDAやモデルの学習結果から適切な仮説が導かれ、検証が行われているか
-     - コードの可読性（コードの構造化、コメントの適切さなど）
+2. `stock_price.csv`ファイルをスクリプトと同じディレクトリに配置します。
 
-   - **ビジネス観点**:
-     - 技術的な内容をクライアントにわかりやすく説明できるか
-     - 作成された資料全体のストーリーに一貫性があるか
-     - 資料の各ページの内容（タイトル、ボディ、メッセージ）に一貫性があるか
-     - プレゼンテーションでわかりやすく説明できているか
-     - 決められた時間内にアウトプットを出せているか
+3. Pythonを使用してスクリプトを実行します：
+   ```
+   python stock_price_prediction_model.py
+   ```
 
+4. スクリプトは自動的にデータを読み込み、EDAを実行し、モデルをトレーニングして結果を表示します。
 
-### 補足資料
-
-- **スライドライティングの参考資料**:
-  - [スライドライティングの基本](https://note.com/powerpoint_jp/n/n812a673ce2ab)
-  - [スライド作成のテクニック](https://note.com/powerpoint_jp/n/n9a8fd26ee181)
-  - [Lecture on Slide Writing (Slideshare)](https://www.slideshare.net/slideshow/lecture-on-slide-writing/103255387)
+### 出力
+スクリプトは以下のようなさまざまなプロットと指標を生成します：
+- 株価トレンド
+- 特徴量重要度分析
+- モデルのパフォーマンス評価（MSE、MAE、R^2）
+- バックテスト結果
